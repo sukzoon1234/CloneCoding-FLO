@@ -6,5 +6,6 @@
 1. 뷰 바인딩 소개      
      
 2. EditText를 통해서 TextView의 text 교체하기.         
+     
 https://sukzoon1234.tistory.com/33      
 ## Practice 2   
