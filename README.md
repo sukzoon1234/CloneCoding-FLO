@@ -19,6 +19,7 @@ https://sukzoon1234.tistory.com/33
 https://sukzoon1234.tistory.com/34     
 
 ## Practice 4     
++ ArrayAdapter 사용 해보기    
 + Custom Adapter 직접 만들어서 ListView 생성하기    
      
 https://sukzoon1234.tistory.com/37       
