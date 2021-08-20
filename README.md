@@ -4,7 +4,7 @@
 * (2021.08.04 ~ ) 안드로이드 코틀린 
 
 ## Practice 1     
-+ 뷰 바인딩 소개      
++ View Binding 소개      
      
 + EditText와 Button을 통해서 TextView의 text 교체하기            
      
