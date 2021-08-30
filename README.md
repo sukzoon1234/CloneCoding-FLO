@@ -23,3 +23,8 @@ https://sukzoon1234.tistory.com/34
 + Custom Adapter 직접 만들어서 ListView 생성하기    
      
 https://sukzoon1234.tistory.com/37       
+
+
+## Practice 5      
++ Navigation view    
++ Navigation Drawer     
