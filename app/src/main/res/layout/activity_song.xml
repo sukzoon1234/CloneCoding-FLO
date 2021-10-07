@@ -9,10 +9,10 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="22dp"
         android:layout_height="22dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/btn_player_setting"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/player_btn_eq_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/player_btn_eq_iv"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -27,8 +27,8 @@ xmlns:tools="http://schemas.android.com/tools"
 
     <ImageView
         android:id="@+id/player_btn_down_iv"
-        android:layout_width="20dp"
-        android:layout_height="0dp"
+        android:layout_width="12dp"
+        android:layout_height="14dp"
         android:layout_marginEnd="15dp"
         android:src="@drawable/nugu_btn_down"
         app:layout_constraintBottom_toBottomOf="@+id/player_btn_eq_iv"
@@ -49,11 +49,10 @@ xmlns:tools="http://schemas.android.com/tools"
 
     <TextView
         android:id="@+id/player_title_tv"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="라일락"
+        android:text="제목"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
@@ -67,7 +66,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/player_singer_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아이유 (IU)"
+        android:text="가수"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintEnd_toStartOf="@id/player_singer_arrow_more_iv"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,27 +82,21 @@ xmlns:tools="http://schemas.android.com/tools"
         app:layout_constraintStart_toEndOf="@id/player_singer_tv"
         app:layout_constraintTop_toTopOf="@+id/player_singer_tv" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/player_album_iv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/player_title_tv"
-        app:layout_constraintBottom_toTopOf="@id/player_lyrics_1_tv">
-
         <ImageView
+            android:id="@+id/player_album_iv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/img_album_exp2" />
-    </androidx.cardview.widget.CardView>
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_album_exp2"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/player_title_tv"
+            app:layout_constraintBottom_toTopOf="@id/player_lyrics_1_tv"/>
 
     <TextView
         android:id="@+id/player_lyrics_1_tv"

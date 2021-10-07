@@ -8,7 +8,11 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/BottomNaviTemlate/BottomNaviTemplate/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/BottomNaviTemlate/BottomNaviTemplate/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/BottomNaviTemlate/BottomNaviTemplate/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/btn_album_listen_all.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/btn_album_select_all.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/btn_album_toggle.xml" value="0.2916666666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/button_background_round.xml" value="1.565625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/button_round.xml" value="0.2759259259259259" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/button_round_background.xml" value="1.565625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/ic_launcher_background.xml" value="1.55" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/ic_play_arrow.xml" value="0.25092592592592594" />
@@ -18,11 +22,15 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/main_btm_search_selector.xml" value="1.565625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/round.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/activity_song.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/activity_song.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album.xml" value="0.3220574606116775" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album_detail.xml" value="0.1451545530492899" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album_included.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album_video.xml" value="0.1451545530492899" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_look.xml" value="0.4809688581314879" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/round.xml" value="0.1221881390593047" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
       </map>
     </option>
   </component>

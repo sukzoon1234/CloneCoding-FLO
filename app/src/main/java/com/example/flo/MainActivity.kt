@@ -13,9 +13,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        initNavigation()
 
         window.apply {
             clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
@@ -24,12 +21,27 @@ class MainActivity : AppCompatActivity() {
             decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initNavigation()
+
 
         binding.mainPlayerLayout.setOnClickListener {
+            val song = Song(binding.mainMiniplayerTitleTv.text.toString(), binding.mainMiniplayerSingerTv.text.toString())
             val intent = Intent(this, SongActivity::class.java)
-
-
+            intent.putExtra("title", song.title)
+            intent.putExtra("singer", song.singer)
             startActivity(intent)
+        }
+
+        binding.mainBtnMiniplayerPlayIv.setOnClickListener {
+            binding.mainBtnMiniplayerPauseIv.setVisibility(View.VISIBLE)
+            binding.mainBtnMiniplayerPlayIv.setVisibility(View.GONE)
+        }
+
+        binding.mainBtnMiniplayerPauseIv.setOnClickListener {
+            binding.mainBtnMiniplayerPlayIv.setVisibility(View.VISIBLE)
+            binding.mainBtnMiniplayerPauseIv.setVisibility(View.GONE)
         }
 
         binding.mainBnv.setOnItemSelectedListener {
@@ -67,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
     private fun initNavigation() {
         supportFragmentManager.beginTransaction().replace(R.id.main_frm, HomeFragment())
             .commitAllowingStateLoss()

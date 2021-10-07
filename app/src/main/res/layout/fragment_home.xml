@@ -253,6 +253,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <ImageView
+                                android:id="@+id/home_today_music_01_iv"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/img_album_exp2"
@@ -295,6 +296,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <ImageView
+                                android:id="@+id/home_today_music_02_iv"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/img_album_exp2"
@@ -334,6 +336,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <ImageView
+                                android:id="@+id/home_today_music_03_iv"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/img_album_exp2"
@@ -373,6 +376,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <ImageView
+                                android:id="@+id/home_today_music_04_iv"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/img_album_exp2"
@@ -412,6 +416,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <ImageView
+                                android:id="@+id/home_today_music_05_iv"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/img_album_exp2"
