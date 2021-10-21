@@ -1,7 +1,5 @@
 package com.example.flo
 
-import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -18,6 +16,20 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+
+        val bannerAdapter = HomeBannerVpAdapter(this)
+        bannerAdapter.addFragment(HomeBannerFragment(R.drawable.img_home_viewpager_exp))
+        bannerAdapter.addFragment(HomeBannerFragment(R.drawable.img_home_viewpager_exp))
+        bannerAdapter.addFragment(HomeBannerFragment(R.drawable.img_home_viewpager_exp))
+        bannerAdapter.addFragment(HomeBannerFragment(R.drawable.img_home_viewpager_exp))
+        bannerAdapter.addFragment(HomeBannerFragment(R.drawable.img_home_viewpager_exp))
+
+
+        binding.homeBannerViewpager.adapter = bannerAdapter
+
+
+
 
         binding.homeTodayMusic01Iv.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()

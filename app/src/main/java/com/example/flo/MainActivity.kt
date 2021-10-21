@@ -26,13 +26,34 @@ class MainActivity : AppCompatActivity() {
         initNavigation()
 
 
+
+        if(intent.hasExtra("title") && intent.hasExtra("singer") && intent.hasExtra("state")) {
+            val title = intent.getStringExtra("title")
+            val singer = intent.getStringExtra("singer")
+            val state = intent.getIntExtra("state", 0)
+            binding.mainMiniplayerTitleTv.text = title
+            binding.mainMiniplayerSingerTv.text = singer
+            if (state == View.VISIBLE) {
+                binding.mainBtnMiniplayerPlayIv.visibility = View.VISIBLE
+                binding.mainBtnMiniplayerPauseIv.visibility = View.GONE
+            } else {
+                binding.mainBtnMiniplayerPlayIv.visibility = View.GONE
+                binding.mainBtnMiniplayerPauseIv.visibility = View.VISIBLE
+            }
+        }
+
         binding.mainPlayerLayout.setOnClickListener {
-            val song = Song(binding.mainMiniplayerTitleTv.text.toString(), binding.mainMiniplayerSingerTv.text.toString())
+            val song = Song(binding.mainMiniplayerTitleTv.text.toString(), binding.mainMiniplayerSingerTv.text.toString(), binding.mainBtnMiniplayerPlayIv.visibility)
             val intent = Intent(this, SongActivity::class.java)
             intent.putExtra("title", song.title)
             intent.putExtra("singer", song.singer)
+            intent.putExtra("state", song.state)
             startActivity(intent)
+            finish()
         }
+
+
+
 
         binding.mainBtnMiniplayerPlayIv.setOnClickListener {
             binding.mainBtnMiniplayerPauseIv.setVisibility(View.VISIBLE)

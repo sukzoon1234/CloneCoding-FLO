@@ -5,7 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     >
     <LinearLayout
         android:id="@+id/album_included_top_sticky_view"
@@ -22,6 +22,7 @@
             android:background="@drawable/button_round"
             android:layout_gravity="center"
             android:text="내 취향 MIX"
+            android:clickable="true"
             android:gravity="left|center_vertical"
             android:layout_marginTop="8dp"
             android:paddingLeft="15dp"
@@ -64,16 +65,17 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/album_included_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="150dp"
+        android:overScrollMode="never"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/album_included_top_sticky_view"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:fillViewport="true">
+>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:nestedScrollingEnabled="false">
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -598,6 +600,214 @@
                     app:layout_constraintEnd_toStartOf="@id/album_included_more_10_iv"/>
                 <ImageView
                     android:id="@+id/album_included_more_10_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/btn_player_more"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:id="@+id/album_included_num_11_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11"
+                    android:textColor="#000000"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/album_included_title_11_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/album_included_singer_11_tv"/>
+                <TextView
+                    android:id="@+id/album_included_title_11_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="에필로그2"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toEndOf="@id/album_included_num_11_tv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/album_included_singer_11_tv"/>
+                <TextView
+                    android:id="@+id/album_included_singer_11_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이유 (IU)"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/album_included_num_11_tv"
+                    app:layout_constraintTop_toBottomOf="@id/album_included_title_11_tv"/>
+                <ImageView
+                    android:id="@+id/album_included_play_11_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/nugu_btn_play_32"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/album_included_more_11_iv"/>
+                <ImageView
+                    android:id="@+id/album_included_more_11_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/btn_player_more"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:id="@+id/album_included_num_12_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textColor="#000000"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/album_included_title_12_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/album_included_singer_12_tv"/>
+                <TextView
+                    android:id="@+id/album_included_title_12_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="에필로그2"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toEndOf="@id/album_included_num_12_tv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/album_included_singer_12_tv"/>
+                <TextView
+                    android:id="@+id/album_included_singer_12_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이유 (IU)"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/album_included_num_12_tv"
+                    app:layout_constraintTop_toBottomOf="@id/album_included_title_12_tv"/>
+                <ImageView
+                    android:id="@+id/album_included_play_12_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/nugu_btn_play_32"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/album_included_more_12_iv"/>
+                <ImageView
+                    android:id="@+id/album_included_more_12_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/btn_player_more"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:id="@+id/album_included_num_13_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13"
+                    android:textColor="#000000"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/album_included_title_13_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/album_included_singer_13_tv"/>
+                <TextView
+                    android:id="@+id/album_included_title_13_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="에필로그2"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toEndOf="@id/album_included_num_13_tv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/album_included_singer_13_tv"/>
+                <TextView
+                    android:id="@+id/album_included_singer_13_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이유 (IU)"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/album_included_num_13_tv"
+                    app:layout_constraintTop_toBottomOf="@id/album_included_title_13_tv"/>
+                <ImageView
+                    android:id="@+id/album_included_play_13_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/nugu_btn_play_32"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/album_included_more_13_iv"/>
+                <ImageView
+                    android:id="@+id/album_included_more_13_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/btn_player_more"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp">
+                <TextView
+                    android:id="@+id/album_included_num_14_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14"
+                    android:textColor="#000000"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/album_included_title_14_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/album_included_singer_14_tv"/>
+                <TextView
+                    android:id="@+id/album_included_title_14_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="에필로그2"
+                    android:textColor="#000000"
+                    app:layout_constraintStart_toEndOf="@id/album_included_num_14_tv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/album_included_singer_14_tv"/>
+                <TextView
+                    android:id="@+id/album_included_singer_14_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이유 (IU)"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/album_included_num_14_tv"
+                    app:layout_constraintTop_toBottomOf="@id/album_included_title_14_tv"/>
+                <ImageView
+                    android:id="@+id/album_included_play_14_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/nugu_btn_play_32"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/album_included_more_14_iv"/>
+                <ImageView
+                    android:id="@+id/album_included_more_14_iv"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/btn_player_more"

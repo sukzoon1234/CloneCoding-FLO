@@ -5,25 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.flo.databinding.FragmentAlbumDetailBinding
-import java.io.BufferedReader
-import java.io.File
-import java.io.InputStream
+import com.example.flo.databinding.FragmentLockerFileBinding
 
-class AlbumDetailFragment : Fragment() {
-    lateinit var binding : FragmentAlbumDetailBinding
-
+class LockerFileFragment : Fragment() {
+    lateinit var binding : FragmentLockerFileBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAlbumDetailBinding.inflate(inflater, container, false)
-
-
-
-
-
+        binding = FragmentLockerFileBinding.inflate(inflater, container, false)
 
         return binding.root
     }

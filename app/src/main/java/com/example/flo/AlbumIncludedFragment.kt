@@ -16,9 +16,9 @@ class AlbumIncludedFragment: Fragment() {
     ): View? {
         binding = FragmentAlbumIncludedBinding.inflate(inflater, container, false)
 
-        binding.albumIncludedScrollView.setNestedScrollingEnabled(false);
 
 
         return binding.root
     }
 }
+

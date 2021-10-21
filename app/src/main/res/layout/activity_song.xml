@@ -151,7 +151,7 @@ xmlns:tools="http://schemas.android.com/tools"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/player_lyrics_1_tv"
-        app:layout_constraintBottom_toTopOf="@id/player_btn_repeat_iv"
+        app:layout_constraintBottom_toTopOf="@id/player_btn_linear"
         />
     <TextView
         android:id="@+id/player_time_start_tv"
@@ -173,56 +173,88 @@ xmlns:tools="http://schemas.android.com/tools"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/player_song_seekbar"/>
 
-    <ImageView
-        android:id="@+id/player_btn_repeat_iv"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/nugu_btn_repeat_inactive"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+    <LinearLayout
+        android:id="@+id/player_btn_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/player_song_seekbar"
-        app:layout_constraintEnd_toStartOf="@id/player_btn_skip_previous_iv"
-        app:layout_constraintBottom_toTopOf="@id/player_btn_related_iv"/>
-
-    <ImageView
-        android:id="@+id/player_btn_skip_previous_iv"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
-        android:src="@drawable/nugu_btn_skip_previous_32"
-        app:layout_constraintBottom_toBottomOf="@+id/player_btn_repeat_iv"
-        app:layout_constraintStart_toEndOf="@+id/player_btn_repeat_iv"
-        app:layout_constraintTop_toTopOf="@+id/player_btn_repeat_iv"
-        app:layout_constraintEnd_toStartOf="@id/player_btn_play_iv"/>
-
-    <ImageView
-        android:id="@+id/player_btn_play_iv"
-        android:layout_width="37dp"
-        android:layout_height="37dp"
-        android:src="@drawable/btn_player_play"
-        app:layout_constraintBottom_toBottomOf="@+id/player_btn_skip_previous_iv"
-        app:layout_constraintStart_toEndOf="@+id/player_btn_skip_previous_iv"
-        app:layout_constraintTop_toTopOf="@+id/player_btn_skip_previous_iv"
-        app:layout_constraintEnd_toStartOf="@id/player_btn_skip_next_iv"/>
-
-    <ImageView
-        android:id="@+id/player_btn_skip_next_iv"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
-        android:src="@drawable/nugu_btn_skip_next_32"
-        app:layout_constraintBottom_toBottomOf="@+id/player_btn_play_iv"
-        app:layout_constraintStart_toEndOf="@+id/player_btn_play_iv"
-        app:layout_constraintTop_toTopOf="@+id/player_btn_play_iv"
-        app:layout_constraintEnd_toStartOf="@id/player_btn_random_iv"/>
-
-    <ImageView
-        android:id="@+id/player_btn_random_iv"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/nugu_btn_random_inactive"
-        app:layout_constraintBottom_toBottomOf="@+id/player_btn_skip_next_iv"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/player_btn_skip_next_iv"
-        app:layout_constraintTop_toTopOf="@+id/player_btn_skip_next_iv" />
+        app:layout_constraintBottom_toTopOf="@id/player_btn_related_iv">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <ImageView
+            android:id="@+id/player_btn_repeat_iv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/nugu_btn_repeat_inactive" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <ImageView
+            android:id="@+id/player_btn_skip_previous_iv"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/nugu_btn_skip_previous_32"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <ImageView
+            android:id="@+id/player_btn_play_iv"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:src="@drawable/btn_player_play"/>
+
+        <ImageView
+            android:id="@+id/player_btn_pause_iv"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:visibility="gone"
+            android:src="@drawable/btn_miniplay_mvpause"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <ImageView
+            android:id="@+id/player_btn_skip_next_iv"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/nugu_btn_skip_next_32"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <ImageView
+            android:id="@+id/player_btn_random_iv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/nugu_btn_random_inactive"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+
+
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/player_btn_instagram_iv"
@@ -245,7 +277,7 @@ xmlns:tools="http://schemas.android.com/tools"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/player_btn_list_iv"
         app:layout_constraintStart_toEndOf="@id/player_btn_instagram_iv"
-        app:layout_constraintTop_toBottomOf="@+id/player_btn_repeat_iv" />
+        app:layout_constraintTop_toBottomOf="@+id/player_btn_linear" />
 
     <ImageView
         android:id="@+id/player_btn_list_iv"

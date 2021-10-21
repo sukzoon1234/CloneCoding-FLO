@@ -21,13 +21,18 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/main_btm_look_selector.xml" value="1.11875" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/main_btm_search_selector.xml" value="1.565625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/drawable/round.xml" value="0.16041666666666668" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/activity_song.xml" value="0.33" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album.xml" value="0.3220574606116775" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album_detail.xml" value="0.1451545530492899" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/album_content.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album_detail.xml" value="0.1817946728730282" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album_included.xml" value="0.33" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album_video.xml" value="0.1451545530492899" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_album_video.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_home_banner.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_locker.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_locker_file.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_locker_save.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/fragment_look.xml" value="0.4809688581314879" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/layout/round.xml" value="0.1221881390593047" />
         <entry key="..\:/Users/user/AndroidStudioProjects/UMC/FLO/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />

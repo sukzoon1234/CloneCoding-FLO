@@ -1,5 +1,6 @@
 package com.example.flo
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -33,12 +34,41 @@ class SongActivity : AppCompatActivity() {
             .into(binding.playerAlbumIv)
 
 
-        if(intent.hasExtra("title") && intent.hasExtra("singer")) {
+        if(intent.hasExtra("title") && intent.hasExtra("singer") && intent.hasExtra("state")) {
             val title = intent.getStringExtra("title")
             val singer = intent.getStringExtra("singer")
+            val state = intent.getIntExtra("state", 0)
             binding.playerTitleTv.text = title
             binding.playerSingerTv.text = singer
+            if (state == View.VISIBLE) {
+                binding.playerBtnPlayIv.visibility = View.VISIBLE
+                binding.playerBtnPauseIv.visibility = View.GONE
+            } else {
+                binding.playerBtnPlayIv.visibility = View.GONE
+                binding.playerBtnPauseIv.visibility = View.VISIBLE
+            }
+
         }
+
+
+        binding.playerBtnDownIv.setOnClickListener {
+            onBackPressed()
+        }
+
+
+        binding.playerBtnPlayIv.setOnClickListener {
+            binding.playerBtnPauseIv.setVisibility(View.VISIBLE)
+            binding.playerBtnPlayIv.setVisibility(View.GONE)
+        }
+
+        binding.playerBtnPauseIv.setOnClickListener {
+            binding.playerBtnPlayIv.setVisibility(View.VISIBLE)
+            binding.playerBtnPauseIv.setVisibility(View.GONE)
+        }
+
+
+
+
 
         var indexRepeat : Int = 0
         binding.playerBtnRepeatIv.setOnClickListener {
@@ -64,10 +94,16 @@ class SongActivity : AppCompatActivity() {
         }
 
 
-        binding.playerBtnDownIv.setOnClickListener {
-            finish()
-        }
 
     }
-
+    override fun onBackPressed()
+    {
+        val song = Song(binding.playerTitleTv.text.toString(), binding.playerSingerTv.text.toString(), binding.playerBtnPlayIv.visibility)
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("title", song.title)
+        intent.putExtra("singer", song.singer)
+        intent.putExtra("state", song.state)
+        startActivity(intent)
+        finish()
+    }
 }
