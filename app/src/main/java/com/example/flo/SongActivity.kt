@@ -12,7 +12,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.flo.databinding.ActivitySongBinding
 
 class SongActivity : AppCompatActivity() {
-    lateinit var binding : ActivitySongBinding
+    lateinit var binding : com.example.flo.databinding.ActivitySongBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

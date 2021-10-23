@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="menu1">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/origin"
+                    android:icon="@drawable/ic_baseline_airplay_24"
+                    android:title="기본"/>
+                <item android:id="@+id/social"
+                    android:icon="@drawable/ic_baseline_people_24"
+                    android:title="소셜"/>
+                <item android:id="@+id/promotion"
+                    android:icon="@drawable/ic_baseline_create_24"
+                    android:title="프로모션"/>
+            </group>
+        </menu>
+    </item>
+    <item android:title="menu2">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/send"
+                    android:icon="@drawable/ic_baseline_near_me_24"
+                    android:title="보낸편지함"/>
+                <item android:id="@+id/storage"
+                    android:icon="@drawable/ic_baseline_sd_storage_24"
+                    android:title="보관함"/>
+                <item android:id="@+id/spam"
+                    android:icon="@drawable/ic_baseline_block_24"
+                    android:title="스팸함"/>
+                <item android:id="@+id/trash"
+                    android:icon="@drawable/ic_baseline_restore_from_trash_24"
+                    android:title="휴지통"/>
+            </group>
+        </menu>
+    </item>
+</menu>

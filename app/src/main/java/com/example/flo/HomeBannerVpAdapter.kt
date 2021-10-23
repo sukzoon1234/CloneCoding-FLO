@@ -3,8 +3,8 @@ package com.example.flo
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class HomeBannerVpAdapter(val fragment : Fragment) :FragmentStateAdapter(fragment) {
-    private val fragmentlist : ArrayList<Fragment> = ArrayList()
+class HomeBannerVpAdapter(fragment : Fragment) :FragmentStateAdapter(fragment) {
+    private var fragmentlist : ArrayList<Fragment> = ArrayList()
     override fun getItemCount(): Int = fragmentlist.size
 
     override fun createFragment(position: Int): Fragment = fragmentlist[position]

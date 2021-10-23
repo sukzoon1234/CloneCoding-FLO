@@ -26,7 +26,9 @@ class LockerFragment : Fragment() {
         val lockerVpAdapter = LockerVpAdapter(this)
         binding.lockerViewPager.adapter = lockerVpAdapter
 
-        val tabTextList = arrayListOf("저장한 곡", "음악파일")
+        val tabTextList = arrayListOf<String>("저장한 곡", "음악파일")
+        // listOf 는 리스트 변경 불가(immutable),
+        // 그에반해 arrayListOf는 리스트 변경 가능!!(mutable)
 
         TabLayoutMediator (binding.lockerTabLayout, binding.lockerViewPager) { tab, position ->
             tab.text = tabTextList[position]
