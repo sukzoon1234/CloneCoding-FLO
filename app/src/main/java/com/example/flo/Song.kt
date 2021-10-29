@@ -1,7 +1,9 @@
 package com.example.flo
 
 data class Song(
-    val title : String = "",
-    val singer : String = "",
-    val state : Int = 0
+    var title : String = "",
+    var singer : String = "",
+    var totalTime : Int = 0,
+    var currentTime : Int = 0,
+    var isPlaying : Boolean = false
 )
