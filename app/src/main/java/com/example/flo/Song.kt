@@ -5,5 +5,6 @@ data class Song(
     var singer : String = "",
     var totalTime : Int = 0,
     var currentTime : Int = 0,
-    var isPlaying : Boolean = false
+    var isPlaying : Boolean = false,
+    var musicFile : String = ""
 )

@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Color
 import android.media.Image
+import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -18,6 +19,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.flo.databinding.ActivityMainBinding
+import com.google.gson.Gson
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +30,23 @@ class MainActivity : AppCompatActivity() {
     private lateinit var getResult : ActivityResultLauncher<Intent> //songActivity  호출할때 사용
 
     private lateinit var player : MainPlayer
+
+    lateinit var  mediaPlayer : MediaPlayer
+
+    private var gson : Gson = Gson()
+
+    init {instance = this}
+    companion object {
+        //자신의 인스턴스를 반환하는 getInstance() 메소드 등록.
+        //companion object는 인스턴스르 생성하지 않고, 바로 사용할 수 있는 프로퍼티와 메소드의 집합이다.
+        //SongActivity에서 mediaPlayer 변수 끌어다가 쓸 수 있게 하려고 사용!
+        private var instance : MainActivity?=null
+        fun getInstance():MainActivity? {
+            return instance
+        }
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,15 +62,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initNavigation()
 
-
-
-
         getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if(result.resultCode == RESULT_OK) {
 //                Log.d("check", "Hi: ${result.data?.getStringExtra("title")}")
                 setPlayer(result.data!!) //intent 넘겨주기
             }
         }
+
+        mediaPlayer = MediaPlayer.create(this, resources.getIdentifier(song.musicFile, "raw", this.packageName))
 
         binding.mainPlayerLayout.setOnClickListener {
 //            val totalTime = song.totalTime
@@ -63,6 +81,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("totalTime", song.totalTime)
             intent.putExtra("currentTime", song.currentTime)
             intent.putExtra("isPlaying", song.isPlaying)
+            intent.putExtra("musicFile", song.musicFile)
             getResult.launch(intent)
 
         }
@@ -72,11 +91,15 @@ class MainActivity : AppCompatActivity() {
         binding.mainBtnMiniplayerPlayIv.setOnClickListener {
             song.isPlaying = true
             setIsPlaying(true)
+            mediaPlayer?.start()
         }
 
         binding.mainBtnMiniplayerPauseIv.setOnClickListener {
             song.isPlaying = false
             setIsPlaying(false)
+            mediaPlayer?.pause()
+//            Log.d("aaa", "${song.currentTime}")
+//            Log.d("aaa", "${mediaPlayer?.currentPosition}")
         }
 
 
@@ -123,11 +146,14 @@ class MainActivity : AppCompatActivity() {
         song.totalTime = data.getIntExtra("totalTime", 0)
         song.currentTime = data.getIntExtra("currentTime", 0)
         song.isPlaying = data.getBooleanExtra("isPlaying", false)
+        song.musicFile = data.getStringExtra("musicFile")!!
+
         Log.d("main", "(쓰레드) $song")
         binding.mainMiniplayerTitleTv.text = song.title
         binding.mainMiniplayerSingerTv.text = song.singer
         binding.mainBottomSeekbar.progress = song.currentTime * 1000 / song.totalTime
         setIsPlaying(song.isPlaying)
+
     }
 
     private fun setIsPlaying(isPlaying: Boolean) {
@@ -145,7 +171,8 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.main_frm, HomeFragment())
             .commitAllowingStateLoss()
 
-        song = Song("LILAC", "아이유(IU)", 214, 0, false) //Song 객체 초기화
+        Log.d("mainplayer", "메인화면 다시 createview")
+        song = Song("LILAC", "아이유(IU)", 216000, 0, false, "lilac") //Song 객체 초기화
         binding.mainMiniplayerTitleTv.text = song.title
         binding.mainMiniplayerSingerTv.text = song.singer
 
@@ -155,13 +182,21 @@ class MainActivity : AppCompatActivity() {
         override fun run() {
             try{
                 while (true) {
-                    if(song.currentTime >= song.totalTime){
-                        break
+                    if (song.currentTime >= song.totalTime) {
+                        song.currentTime = 0
+                        song.isPlaying = false
+                        binding.mainBottomSeekbar.progress = 0
+                        mediaPlayer?.pause()
+                        mediaPlayer?.seekTo(0)
+                        Handler(Looper.getMainLooper()).post {
+                            setIsPlaying(false)
+                        }
                     }
+
                     if (song.isPlaying) {
                         Log.d("mainminiplayer", "mainminiplayer 쓰레드 잘 실행 중이다!")
-                        sleep(1000)
-                        song.currentTime++
+                        sleep(100)
+                        song.currentTime = song.currentTime + 100
                         Handler(Looper.getMainLooper()).post {
                             binding.mainBottomSeekbar.progress = song.currentTime * 1000 / song.totalTime
                         }
@@ -174,17 +209,42 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    override fun onRestart() {
+        super.onRestart()
+        song.currentTime = mediaPlayer?.currentPosition
+        binding.mainBottomSeekbar.progress = song.currentTime * 1000 / song.totalTime
+    }
+
+
     override fun onStart() { //SongActivity에 갔다가 왔을때,  onCreate()가 호출되는게 아니라 onRestart() -> onStart() 순으로 호출되므로 !!
         super.onStart()
+
+        Log.d("mainplayer", "쓰레드 역전하고 탈출")
         player = MainPlayer()
         player.start()
+
+
+        Log.d("mainplayer", "mainPlayer 쓰레드 onstart")
+
+//        val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
+//        val jsonSong = sharedPreferences.getString("song", null)
+//        song = if (jsonSong == null) {
+//            Song("LILAC", "아이유(IU)", 216000, 0, false, "lilac")
+//        } else {
+//            gson.fromJson(jsonSong, Song::class.java)
+//        }
+
     }
 
 
     override fun onStop() {
-        player.interrupt()
         super.onStop()
+        player.interrupt()
         Log.d("mainplayer", "mainPlayer 쓰레드 종료~!!!")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }
 
