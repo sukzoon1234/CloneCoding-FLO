@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_today_music_album_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="20dp"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:cardCornerRadius="20dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/home_today_music_album_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img_album_exp2"
+                android:scaleType="centerCrop"/>
+            <ImageView
+                android:id="@+id/home_today_music_play_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_play_arrow"
+                android:layout_gravity="right|bottom"/>
+        </FrameLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/home_today_music_title_tv"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="LILAC"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="3dp"/>
+    <TextView
+        android:id="@+id/home_today_music_singer_tv"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="아이유 (IU)"
+        android:textSize="13sp"/>
+</LinearLayout>

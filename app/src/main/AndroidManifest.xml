@@ -18,6 +18,10 @@
         </activity>
         <activity android:name="com.example.flo.MainActivity"/>
         <activity android:name="com.example.flo.SongActivity"/>
+
+        <!-- 강제종료 부분  -->
+        <service android:name="com.example.flo.TerminateService"
+            android:stopWithTask="false" />
     </application>
 
 </manifest>

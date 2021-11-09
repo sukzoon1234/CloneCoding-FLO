@@ -23,11 +23,14 @@ class SongActivity : AppCompatActivity() {
 
     private var song : Song = Song()
 
+    private lateinit var jsonSong : String // song 객체를 json 형태로 변환해서 저장 (string으로 저장)
+
+    private var gson : Gson = Gson()
+
     private lateinit var player : Player
 
     private val mainActivity = MainActivity.getInstance() //MainActivity의 mediaPlayer 를 사용하기 위한 코드
 
-    private var gson : Gson = Gson()
 
     private var indexRepeat : Int = 0
     private var indexRandom : Boolean = false
@@ -35,15 +38,12 @@ class SongActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         window.apply { //Status Bar 투명하게
             clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
             addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             statusBarColor = Color.TRANSPARENT
             decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
-
-
 
 
         binding = ActivitySongBinding.inflate(layoutInflater)
@@ -117,15 +117,16 @@ class SongActivity : AppCompatActivity() {
     }
 
     private fun initSongActivity() {
-//        if(intent.hasExtra("title") && intent.hasExtra("singer") && intent.hasExtra("totalTime")
-//            && intent.hasExtra("currentTime") && intent.hasExtra("isPlaying") && intent.hasExtra("musicFile")) {
-////            Log.d("checking", ": ${intent.getStringExtra("title")}")
-        song.title = intent.getStringExtra("title")!!
-        song.singer = intent.getStringExtra("singer")!!
-        song.totalTime = intent.getIntExtra("totalTime", 0)
-        song.currentTime = intent.getIntExtra("currentTime", 0)
-        song.isPlaying = intent.getBooleanExtra("isPlaying", false)
-        song.musicFile = intent.getStringExtra("musicFile")!!
+
+//        song.title = intent.getStringExtra("title")!!
+//        song.singer = intent.getStringExtra("singer")!!
+//        song.totalTime = intent.getIntExtra("totalTime", 0)
+//        song.currentTime = intent.getIntExtra("currentTime", 0)
+//        song.isPlaying = intent.getBooleanExtra("isPlaying", false)
+//        song.musicFile = intent.getStringExtra("musicFile")!!
+
+        jsonSong = intent.getStringExtra("jsonSong")!!
+        song = gson.fromJson(jsonSong, Song::class.java)
 
         Log.d("stop", "쓰레드  main으로부터 데이터 받기 성공")
 
@@ -176,17 +177,19 @@ class SongActivity : AppCompatActivity() {
 
     override fun onBackPressed()
     {
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("title", song.title)
-        intent.putExtra("singer", song.singer)
-        intent.putExtra("totalTime", song.totalTime)
-        intent.putExtra("currentTime", song.currentTime)
-        intent.putExtra("isPlaying", song.isPlaying)
-        intent.putExtra("musicFile", song.musicFile)
+
+//        intent.putExtra("title", song.title)
+//        intent.putExtra("singer", song.singer)
+//        intent.putExtra("totalTime", song.totalTime)
+//        intent.putExtra("currentTime", song.currentTime)
+//        intent.putExtra("isPlaying", song.isPlaying)
+//        intent.putExtra("musicFile", song.musicFile)
+        intent = Intent(this, MainActivity::class.java)
+        jsonSong = gson.toJson(song)
+        intent.putExtra("jsonSong", jsonSong)
         setResult(RESULT_OK, intent)
         finish()
         Log.d("back", "(쓰레드)뒤로가기 실행")
-
     }
 
 
@@ -258,20 +261,29 @@ class SongActivity : AppCompatActivity() {
         Log.d("stop", "쓰레드  화면 onStop")
         player.interrupt() // 쓰레드 종료
 
-//        // 데이터를 내부 저장소 어딘가에 저장하는 놈.
-//        // 간단한 설정값들을 저장 해 놓을때 매우 유용.
-//        // 중요한 데이터라면 당연히 서버나 데이터베이스에 파일로 저장해야 함.
-//        val sharedPreferences = getSharedPreferences("song", MODE_PRIVATE)
-//        val editor = sharedPreferences.edit()    //sharedPreferences 를 조작할 때 사용!!
-//        //객체(song)를 json으로 변환해주는 중간다리 역할 : Gson!!!
-//        val json = gson.toJson(song) //song 객체를 Gson 을 통해서 json 형태로 변환
-//        editor.putString("song", json)
-//        editor.apply()
+
+
     }
 
 
     override fun onDestroy() { // 화면(SongActivity) 이 꺼질때 onDestroy 함수가 호출이 된다.
         super.onDestroy()
+
+
+//        // 데이터를 내부 저장소 어딘가에 저장하는 놈.
+//        // 간단한 설정값들을 저장 해 놓을때 매우 유용.
+//        // 중요한 데이터라면 당연히 서버나 데이터베이스에 파일로 저장해야 함.
+        val sharedPreferences = getSharedPreferences("jsonSong", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()    //sharedPreferences 를 조작할 때 사용!!
+//        //객체(song)를 json으로 변환해주는 중간다리 역할 : Gson!!!
+        jsonSong = gson.toJson(song) //song 객체를 Gson 을 통해서 json 형태로 변환
+        editor.putString("jsonSong", jsonSong)
+        editor.apply()
+
         Log.d("destroy", "쓰레드 종료 + 화면꺼짐")
+
+
     }
 }
+ // !!!!!!!!!!!!!  SongActivity에서 바탕화면 나가서 강제종료하는거랑, MainActivity로 가는거랑 코드적으로 구분지어서 코딩 해야돼!!!ㅜㅠ
+//////////////////////////////

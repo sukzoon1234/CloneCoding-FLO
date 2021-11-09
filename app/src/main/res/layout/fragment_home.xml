@@ -118,238 +118,240 @@
 
         </LinearLayout>
 
-        <HorizontalScrollView
-            android:id="@+id/home_today_music_scroll_view"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_today_music_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/home_today_music_tv"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="15dp">
+            app:layout_constraintTop_toBottomOf="@id/home_today_music_tv"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_album"/>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginEnd="20dp">
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <ImageView
-                                android:id="@+id/home_today_music_01_iv"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/img_album_exp2"
-                                android:scaleType="centerCrop"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_play_arrow"
-                                android:layout_gravity="right|bottom"/>
-                        </FrameLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="LILAC"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="3dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="아이유 (IU)"
-                        android:textSize="13sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginEnd="20dp">
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <ImageView
-                                android:id="@+id/home_today_music_02_iv"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/img_album_exp2"
-                                android:scaleType="centerCrop"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_play_arrow"
-                                android:layout_gravity="right|bottom"/>
-                        </FrameLayout>
-                    </androidx.cardview.widget.CardView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="LILAC"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="3dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="아이유 (IU)"
-                        android:textSize="13sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginEnd="20dp">
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <ImageView
-                                android:id="@+id/home_today_music_03_iv"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/img_album_exp2"
-                                android:scaleType="centerCrop"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_play_arrow"
-                                android:layout_gravity="right|bottom"/>
-                        </FrameLayout>
-                    </androidx.cardview.widget.CardView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="LILAC"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="3dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="아이유 (IU)"
-                        android:textSize="13sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginEnd="20dp">
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <ImageView
-                                android:id="@+id/home_today_music_04_iv"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/img_album_exp2"
-                                android:scaleType="centerCrop"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_play_arrow"
-                                android:layout_gravity="right|bottom"/>
-                        </FrameLayout>
-                    </androidx.cardview.widget.CardView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="LILAC"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="3dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="아이유 (IU)"
-                        android:textSize="13sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="140dp"
-                        android:layout_height="140dp"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginEnd="20dp">
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                            <ImageView
-                                android:id="@+id/home_today_music_05_iv"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/img_album_exp2"
-                                android:scaleType="centerCrop"/>
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_play_arrow"
-                                android:layout_gravity="right|bottom"/>
-                        </FrameLayout>
-                    </androidx.cardview.widget.CardView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="LILAC"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="3dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="아이유 (IU)"
-                        android:textSize="13sp"/>
-                </LinearLayout>
-            </LinearLayout>
-        </HorizontalScrollView>
-
-<!--        <ImageView-->
-<!--            android:id="@+id/home_viewpager1_iv"-->
-<!--            android:layout_width="0dp"-->
+<!--        <HorizontalScrollView-->
+<!--            android:id="@+id/home_today_music_scroll_view"-->
+<!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="wrap_content"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            android:adjustViewBounds="true"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:layout_marginBottom="20dp"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/home_today_music_scroll_view"-->
-<!--            app:layout_constraintLeft_toLeftOf="parent"-->
-<!--            app:layout_constraintRight_toRightOf="parent"-->
-<!--            android:src="@drawable/img_home_viewpager_exp" />-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/home_today_music_tv"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginStart="15dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="140dp"-->
+<!--                        android:layout_height="140dp"-->
+<!--                        app:cardCornerRadius="20dp"-->
+<!--                        android:layout_marginEnd="20dp">-->
+<!--                        <FrameLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+<!--                            <ImageView-->
+<!--                                android:id="@+id/home_today_music_01_iv"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:src="@drawable/img_album_exp2"-->
+<!--                                android:scaleType="centerCrop"/>-->
+<!--                            <ImageView-->
+<!--                                android:layout_width="40dp"-->
+<!--                                android:layout_height="40dp"-->
+<!--                                android:src="@drawable/ic_play_arrow"-->
+<!--                                android:layout_gravity="right|bottom"/>-->
+<!--                        </FrameLayout>-->
+
+
+<!--                    </androidx.cardview.widget.CardView>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="LILAC"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginBottom="3dp"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="아이유 (IU)"-->
+<!--                        android:textSize="13sp"/>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="140dp"-->
+<!--                        android:layout_height="140dp"-->
+<!--                        app:cardCornerRadius="20dp"-->
+<!--                        android:layout_marginEnd="20dp">-->
+<!--                        <FrameLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+<!--                            <ImageView-->
+<!--                                android:id="@+id/home_today_music_02_iv"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:src="@drawable/img_album_exp2"-->
+<!--                                android:scaleType="centerCrop"/>-->
+<!--                            <ImageView-->
+<!--                                android:layout_width="40dp"-->
+<!--                                android:layout_height="40dp"-->
+<!--                                android:src="@drawable/ic_play_arrow"-->
+<!--                                android:layout_gravity="right|bottom"/>-->
+<!--                        </FrameLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="LILAC"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginBottom="3dp"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="아이유 (IU)"-->
+<!--                        android:textSize="13sp"/>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="140dp"-->
+<!--                        android:layout_height="140dp"-->
+<!--                        app:cardCornerRadius="20dp"-->
+<!--                        android:layout_marginEnd="20dp">-->
+<!--                        <FrameLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+<!--                            <ImageView-->
+<!--                                android:id="@+id/home_today_music_03_iv"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:src="@drawable/img_album_exp2"-->
+<!--                                android:scaleType="centerCrop"/>-->
+<!--                            <ImageView-->
+<!--                                android:layout_width="40dp"-->
+<!--                                android:layout_height="40dp"-->
+<!--                                android:src="@drawable/ic_play_arrow"-->
+<!--                                android:layout_gravity="right|bottom"/>-->
+<!--                        </FrameLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="LILAC"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginBottom="3dp"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="아이유 (IU)"-->
+<!--                        android:textSize="13sp"/>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="140dp"-->
+<!--                        android:layout_height="140dp"-->
+<!--                        app:cardCornerRadius="20dp"-->
+<!--                        android:layout_marginEnd="20dp">-->
+<!--                        <FrameLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+<!--                            <ImageView-->
+<!--                                android:id="@+id/home_today_music_04_iv"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:src="@drawable/img_album_exp2"-->
+<!--                                android:scaleType="centerCrop"/>-->
+<!--                            <ImageView-->
+<!--                                android:layout_width="40dp"-->
+<!--                                android:layout_height="40dp"-->
+<!--                                android:src="@drawable/ic_play_arrow"-->
+<!--                                android:layout_gravity="right|bottom"/>-->
+<!--                        </FrameLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="LILAC"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginBottom="3dp"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="아이유 (IU)"-->
+<!--                        android:textSize="13sp"/>-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="140dp"-->
+<!--                        android:layout_height="140dp"-->
+<!--                        app:cardCornerRadius="20dp"-->
+<!--                        android:layout_marginEnd="20dp">-->
+<!--                        <FrameLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent">-->
+<!--                            <ImageView-->
+<!--                                android:id="@+id/home_today_music_05_iv"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:src="@drawable/img_album_exp2"-->
+<!--                                android:scaleType="centerCrop"/>-->
+<!--                            <ImageView-->
+<!--                                android:layout_width="40dp"-->
+<!--                                android:layout_height="40dp"-->
+<!--                                android:src="@drawable/ic_play_arrow"-->
+<!--                                android:layout_gravity="right|bottom"/>-->
+<!--                        </FrameLayout>-->
+<!--                    </androidx.cardview.widget.CardView>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="LILAC"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_marginBottom="3dp"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="아이유 (IU)"-->
+<!--                        android:textSize="13sp"/>-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+<!--        </HorizontalScrollView>-->
+
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_banner_viewpager"
             android:layout_width="match_parent"
@@ -357,7 +359,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_today_music_scroll_view"
+            app:layout_constraintTop_toBottomOf="@id/home_today_music_recycler_view"
             android:orientation="horizontal"/>
 
 
